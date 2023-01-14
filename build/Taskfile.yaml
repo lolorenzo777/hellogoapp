@@ -1,0 +1,62 @@
+# https://taskfile.dev
+# run task from the root with "task {mytask} -t /build/Taskfile.yaml"
+
+version: '3'
+
+interval: '1000ms'
+
+tasks:
+
+  build_website:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - rm -rf ./website
+      - mkdir -p ./website
+      - cp -R ./web/static/** ./website/
+      - GOARCH=wasm GOOS=js go build -o ./website/static/app.wasm ./main.go
+      - go build -o ./website/helloapp_server ./cmd/hellogoapp/main.go
+
+  dev_wasm:
+    dir: '{{.USER_WORKING_DIR}}'
+    sources: 
+      - "web/wasm/main.go"
+    cmds: 
+      - GOARCH=wasm GOOS=js go build -o ./tmp/website/app.wasm ./web/wasm/main.go
+
+  dev_components:
+    dir: '{{.USER_WORKING_DIR}}'
+    sources: 
+      - "web/component/**/*"
+    cmds: 
+      - GOARCH=wasm GOOS=js go build -o ./tmp/website/app.wasm ./web/wasm/main.go
+
+  dev_static: 
+    dir: '{{.USER_WORKING_DIR}}'
+    sources: 
+      - "./web/static/**/*"
+    cmds: 
+      - mkdir -p ./tmp/website
+      - cp -R ./web/static/** ./tmp/website/
+
+  # launch it with --watch 
+  dev_front:
+    dir: '{{.USER_WORKING_DIR}}'
+    deps: 
+      - task: dev_static
+      - task: dev_components
+      - task: dev_wasm
+
+  live_back:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - air -c ./build/.air.toml
+
+  # launch it with --watch 
+  # fail to 
+  live_backfail:
+    dir: '{{.USER_WORKING_DIR}}'
+    sources:
+      - "./pkg/**/*"
+      - "./cmd/**/*"
+    cmds:
+      - go run ./cmd/hellogoapp/main.go

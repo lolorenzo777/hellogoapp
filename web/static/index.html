@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- index.html template provided by lolorenzo777@sunraylab.net -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+    <title>linkerpod</title>
+
+    <!-- core CSS & icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/hello.css">
+</head>
+
+<body id="body">
+    <div>
+        <!-- Prerendered component is included in the div below: -->
+        <div id="app-pre-render">
+            <h1 class="title">Hello !</h1>
+        </div>
+        <div id="app-wasm-loader" class="goapp-app-info">
+            <img class="goapp-logo goapp-spin" src="/logo.png"
+                 id="app-wasm-loader-icon">
+            <p id="app-wasm-loader-label" class="goapp-label">
+                Loading...
+            </p>
+        </div>
+    </div>
+    <div id="app-end"></div>
+
+
+    <!-- remove this two lines if you don't want a webassembly application -->
+    <!-- and remove the main.wasm code into the SPA file path-->
+    <script src="/wasm_exec.js"></script>
+    <script src="/hello.js"></script>
+</body>
+
+</html>

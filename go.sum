@@ -1,0 +1,10 @@
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
+github.com/joho/godotenv v1.4.0/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+github.com/maxence-charriere/go-app/v9 v9.6.7 h1:t+wofnLjVsptBB7MNevsFymMYaMIX2hGjLdWgsIFgq4=
+github.com/maxence-charriere/go-app/v9 v9.6.7/go.mod h1:UlniES44R5JoD4HsjMNrAqWXSzyw0smM0Ox+QwnO/IE=
+github.com/sunraylab/verbose v1.2.4 h1:+SAcM6GONNqYweYWA1zJHCw1XkQBCGqN7TCU6D9YKLY=
+github.com/sunraylab/verbose v1.2.4/go.mod h1:j6ioDGFaZJdXnqaoDO44rbxsFWQvbg/GvqIROFx7Vyc=
